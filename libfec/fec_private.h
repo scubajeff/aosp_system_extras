@@ -30,7 +30,7 @@
 #include <vector>
 
 #include <utils/Compat.h>
-#include <mincrypt/rsa.h>
+#include <crypto_utils/android_pubkey.h>
 #include <openssl/sha.h>
 #include <fec/io.h>
 #include <fec/ecc.h>
@@ -59,7 +59,7 @@
 struct verity_header {
     uint32_t magic;
     uint32_t version;
-    uint8_t signature[RSANUMBYTES];
+    uint8_t signature[ANDROID_PUBKEY_MODULUS_SIZE];
     uint32_t length;
 };
 
